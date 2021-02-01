@@ -20,7 +20,7 @@ function SecondPage() {
       <SEO title="Page two" />
       <div style={{ width: "100%", height: "600px" }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.GOOGLE_MAP_API }}
+          bootstrapURLKeys={{ key: process.env.GOOGLE_API_KEY }}
           defaultCenter={mapCenter}
           defaultZoom={zoom}
         >
