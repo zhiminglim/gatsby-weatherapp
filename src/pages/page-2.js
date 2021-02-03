@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Marker from "../components/Marker"
 import GoogleMapReact from "google-map-react"
 
 function SecondPage() {
@@ -11,8 +12,7 @@ function SecondPage() {
     lat: 1.3521,
     lng: 103.8198
   })
-  const [zoom, setZoom] = useState(11);
-
+  const zoom = 12;
 
 
   return (
@@ -20,11 +20,16 @@ function SecondPage() {
       <SEO title="Page two" />
       <div style={{ width: "100%", height: "600px" }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.GOOGLE_API_KEY }}
+          bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_API_KEY }}
           defaultCenter={mapCenter}
           defaultZoom={zoom}
         >
 
+          <Marker 
+            lat={1.4172}
+            lng={103.74855}
+            markerTitle="Woodlands Road"
+          />
         </GoogleMapReact>
       </div>
 
